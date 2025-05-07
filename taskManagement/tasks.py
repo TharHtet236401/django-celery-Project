@@ -8,4 +8,7 @@ def long_running_task(task_id):
     task = Task.objects.get(id=task_id)
     task.completed = True
     task.save()
+    print("--------------------------------")
+    print(f"Task {task_id} completed")
+    print("--------------------------------")
     return f"Task {task_id} completed"

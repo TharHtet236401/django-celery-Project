@@ -4,7 +4,7 @@ from .tasks import long_running_task
 
 def task_list(request):
     tasks = Task.objects.all()
-    return render(request, 'task_list.html', {'tasks': tasks})
+    return render(request, 'taskManagement/task_list.html', {'tasks': tasks})
 
 def create_task(request):
     if request.method == 'POST':
@@ -13,4 +13,4 @@ def create_task(request):
         task = Task.objects.create(title=title, description=description)
         long_running_task.delay(task.id)
         return redirect('task_list')
-    return render(request, 'create_task.html')
+    return render(request, 'taskManagement/create_task.html')

@@ -6,12 +6,3 @@ urlpatterns = [
     path('create/', views.create_task, name='create_task'),
 ]
 
-# django_celery_crud/urls.py
-
-from django.contrib import admin
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('main_app.urls')),
-]
